@@ -81,7 +81,6 @@ const SessionValidation = (startTime, endTime, weekDay) => {
 
 export const MerchantSessionRequest = (element) => {
   const merchantID = window.localStorage.getItem("merchantId");
-  console.log("Ee");
   let baseUrl = import.meta.env.VITE_BASE_URL;
   let tbody = element.querySelector("tbody");
   fetch(`${baseUrl}/studios/${merchantID}`, {

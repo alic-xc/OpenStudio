@@ -5,12 +5,13 @@ import { formExtractor } from "./FormExtractor";
 export const BookingSession = (element) => {
   let baseUrl = import.meta.env.VITE_BASE_URL;
   const form = element.querySelector("#session-form");
-  console.log(form);
+
   form.querySelector("#submit").onclick = function (e) {
-    loginHandler(form);
+    bookingHandler(form);
   };
 
-  const loginHandler = function (form) {
+  sessionHandler(element);
+  const bookingHandler = function (form) {
     const newForm = formExtractor(form);
     const validation = BookingSessionSchema.validate(newForm);
     const userId = localStorage.getItem("userId");
@@ -28,9 +29,6 @@ export const BookingSession = (element) => {
         })
           .then(function (response) {
             const result = response.json();
-
-            console.log(result);
-            console.log(response);
             alert(
               `Booking Created successfully. Your booking  ref is ${result}`
             );
@@ -43,4 +41,35 @@ export const BookingSession = (element) => {
         // alert(content.path);
       });
   };
+};
+
+const sessionHandler = function (element) {
+  let baseUrl = import.meta.env.VITE_BASE_URL;
+  const urlQuery = window.location.search;
+  const urlParams = new URLSearchParams(urlQuery);
+  const sessionInput = element.querySelector("#sessionId");
+  const merchantID = urlParams.get("merchant");
+
+  if (merchantID) {
+    fetch(`${baseUrl}/studios/${merchantID}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(function (response) {
+        const results = response.json();
+        return results;
+      })
+      .then(function (results) {
+        sessionInput.innerHTML = "";
+        sessionInput.innerHTML += "<option value=''>Please select</option>";
+        results.forEach((elem) => {
+          sessionInput.innerHTML += `<option value="${elem.id}"> (${elem.type}) Start From : ${elem.startsAt}  To ${elem.endsAt} </option>`;
+        });
+      })
+      .catch((err) => console.log(err));
+  } else {
+    navigationLoader("/booking/merchant");
+  }
 };

@@ -1,8 +1,10 @@
 import routes from "./router";
 
 export const pageLoader = (name) => {
+  console.log(name);
   let content = new Promise(function (resolve, rejected) {
-    const page = routes.filter((item) => item.path === name);
+    const url = String(name).split("?");
+    const page = routes.filter((item) => item.path === url[0]);
     const content = {
       execute: "",
       response: "",
@@ -12,7 +14,7 @@ export const pageLoader = (name) => {
     let file = page[0].file;
     let template = page[0].template;
     let execute = page[0].execute;
-    console.log(file);
+
     if (page[0].isAuth == "merchant") {
       const merchatId = window.localStorage.getItem("merchantId");
       if (!merchatId) {

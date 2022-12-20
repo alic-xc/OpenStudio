@@ -17,9 +17,14 @@ export const MerchantRegistrationSchema = object({
 }).concat(LoginSchema);
 
 export const FilterSchema = object({
-  toDate: date(),
-  fromDate: date(),
+  toDate: date().notRequired().nullable(),
+  fromDate: date().notRequired().nullable(),
   city: string(),
+});
+
+export const clientsFilterSchema = object({
+  city: string(),
+  name: string(),
 });
 
 export const SessionScheme = object({

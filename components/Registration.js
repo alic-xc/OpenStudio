@@ -44,7 +44,16 @@ export const RegistrationInit = (reg_type, element) => {
           },
         })
           .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
             alert("Account Created successfully.");
+
+            if (data.userId) {
+              localStorage.setItem("userId", data.userId);
+            } else {
+              localStorage.setItem("merchantId", data.merchantId);
+            }
             navigationLoader("/login");
           })
           .catch((err) => console.log(err));
@@ -80,14 +89,10 @@ export const RegistrationInit = (reg_type, element) => {
           .then((data) => {
             if (data?.token) {
               const locatstorage = window.localStorage;
-              locatstorage.clear();
-              locatstorage.setItem("token", data?.token);
               locatstorage.setItem("userType", userType);
               if (userType === "MERCHANT") {
-                locatstorage.setItem("merchantId", data?.merchantId);
                 navigationLoader("/merchant/dashboard");
               } else {
-                locatstorage.setItem("userId", data?.userId);
                 navigationLoader("/");
               }
             } else {

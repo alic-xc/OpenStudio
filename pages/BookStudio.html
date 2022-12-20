@@ -1,0 +1,51 @@
+<div class="col-span-12 p-10">
+  <h1 class="text-2xl">Select Merchant</h1>
+  <div
+    class="my-5 flex xs:flex-col xs:place-items-start gap-5 justify-between place-items-center"
+  >
+    <form class="flex place-items-center gap-x-10" id="filter-form">
+      <div class="flex flex-col">
+        <label>City</label>
+        <input
+          name="city"
+          data-city=""
+          type="text"
+          class="border p-2 xs:w-full"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label>Name</label>
+        <input
+          name="name"
+          data-name=""
+          type="text"
+          class="border p-2 xs:w-full"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label class="text-white">filter</label>
+        <button id="filter" class="btn">filter</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="w-full">
+    <table class="border-collapse border border-slate-400 table-auto w-full">
+      <thead class="">
+        <tr class="">
+          <th class="border border-slate-300 p-2 text-lg">Name</th>
+          <th class="border border-slate-300 p-2 text-lg">Email</th>
+          <th class="border border-slate-300 p-2 text-lg">City Of Operation</th>
+          <th class="border border-slate-300 p-2 text-lg">Phone Number</th>
+          <th class="border border-slate-300 p-2 text-lg">Action</th>
+        </tr>
+      </thead>
+      <tbody id="table-row">
+        <tr>
+          <td class="" colspan="4"><span>No record found.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { RegistrationInit } from "./Registration";
 import { MerchantDashboard } from "./MerchantDashboard";
 import { MerchantSession, MerchantSessionRequest } from "./MerchantSession";
 import { BookingSession } from "./BookingSession";
+import { BookingMerchant } from "./BookingMerchant";
 
 const routes = [
   {
@@ -40,7 +41,19 @@ const routes = [
   {
     path: "/",
     file: "/pages/Dashboard.html",
-    execute: () => {},
+    execute: (element) => {
+      MerchantDashboard(element);
+    },
+    template: "/layout/AppLayout.html",
+    isAuth: "user",
+    key: "",
+  },
+  {
+    path: "/booking/merchant",
+    file: "/pages/BookStudio.html",
+    execute: (element) => {
+      BookingMerchant(element);
+    },
     template: "/layout/AppLayout.html",
     isAuth: "user",
     key: "",
@@ -48,16 +61,6 @@ const routes = [
   {
     path: "/booking/create",
     file: "/pages/CreateBookStudio.html",
-    execute: (element) => {
-      BookingSession(element);
-    },
-    template: "/layout/AppLayout.html",
-    isAuth: "user",
-    key: "",
-  },
-  {
-    path: "/bookings",
-    file: "/pages/BookStudio.html",
     execute: (element) => {
       BookingSession(element);
     },
