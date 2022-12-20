@@ -1,0 +1,45 @@
+<div class="col-span-12 p-10">
+  <h1 class="text-2xl">Create Session</h1>
+  <div>
+    <form class="w-[400px] my-10" id="session-form">
+      <div class="flex flex-col mb-2">
+        <label>Start Time</label>
+        <input
+          data-startTime=""
+          name="startTime"
+          type="time"
+          class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+          required
+        />
+        <span class="error-message" data-name="startTime"></span>
+      </div>
+      <div class="flex flex-col mb-2">
+        <label>End Time</label>
+        <input
+          data-endTime=""
+          name="endTime"
+          type="time"
+          class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+          required
+        />
+        <span class="error-message" data-name="endTime"></span>
+      </div>
+      <div class="flex flex-col mb-2">
+        <label>Duration</label>
+        <select
+          data-type=""
+          name="type"
+          type="datetime-local"
+          class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+          required
+        >
+          <option value="">Please select</option>
+          <option value="WeekDay">Week Days</option>
+          <option value="WeekEnd">Week End</option>
+        </select>
+        <span class="error-message" data-name="duration"></span>
+      </div>
+      <button class="btn" id="submit">Create Session</button>
+    </form>
+  </div>
+</div>

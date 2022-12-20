@@ -1,0 +1,52 @@
+<form class="w-[500px] p-10 mx-auto my-20" method="POST" id="login-form">
+  <div class="flex flex-col mb-2">
+    <label>Username</label>
+    <input
+      data-username=""
+      name="username"
+      type="text"
+      class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+      placeholder="Enter Username"
+      required
+    />
+    <span class="error-message" data-name="username"></span>
+  </div>
+  <div class="flex flex-col mb-2">
+    <label>Password</label>
+    <input
+      data-password=""
+      name="password"
+      type="password"
+      class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+      placeholder="Enter Password"
+      required
+    />
+    <span class="error-message" data-name="password"></span>
+  </div>
+  <div>
+    <div>
+      <input type="hidden" data-accessType="" value="" name="accessType" />
+    </div>
+  </div>
+
+  <button
+    class="bg-blue-500 p-3 text-white rounded-sm"
+    id="submit"
+    type="submit"
+  >
+    Login
+  </button>
+  <button
+    class="bg-blue-500 p-3 text-white rounded-sm"
+    id="submit-merchant"
+    type="submit"
+  >
+    Login as Merchant
+  </button>
+  <div class="flex flex-col my-10">
+    <a class="navigation nav" href="/register/user">Create User Account</a>
+    <a class="navigation nav" href="/register/merchant"
+      >Create Merchant Account</a
+    >
+  </div>
+</form>

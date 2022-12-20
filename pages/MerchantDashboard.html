@@ -1,0 +1,66 @@
+<div class="col-span-12 p-10">
+  <h1 class="text-2xl">My Dashboard</h1>
+  <div
+    class="my-5 flex xs:flex-col xs:place-items-start gap-5 justify-between place-items-center"
+  >
+    <form class="flex place-items-center gap-x-10" id="filter-form">
+      <div class="flex flex-col">
+        <label>City</label>
+        <input
+          name="city"
+          data-city=""
+          type="text"
+          class="border p-2 xs:w-full"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label>From Date</label>
+        <input
+          name="fromDate"
+          data-fromDate=""
+          type="date"
+          class="border p-2 xs:w-full"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label>To Date</label>
+        <input
+          name="toDate"
+          data-toDate=""
+          type="date"
+          class="border p-2 xs:w-full"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label class="text-white">filter</label>
+        <button id="filter" class="btn">filter</button>
+      </div>
+    </form>
+    <div class="flex gap-5">
+      <a href="/merchant/session/create" class="navigation btn"
+        >Create Session</a
+      >
+    </div>
+  </div>
+
+  <div class="w-full">
+    <h1>Recent Bookings</h1>
+    <table class="border-collapse border border-slate-400 table-auto w-full">
+      <thead class="">
+        <tr class="">
+          <th class="border border-slate-300 p-2 text-lg">Booking Ref</th>
+          <th class="border border-slate-300 p-2 text-lg">Title</th>
+          <th class="border border-slate-300 p-2 text-lg">Notes</th>
+          <th class="border border-slate-300 p-2 text-lg">Start Time</th>
+          <th class="border border-slate-300 p-2 text-lg">End Time</th>
+          <th class="border border-slate-300 p-2 text-lg">Date</th>
+        </tr>
+      </thead>
+      <tbody id="table-row">
+        <tr>
+          <td class="" colspan="4"><span>No record found.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

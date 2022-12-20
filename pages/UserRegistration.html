@@ -1,0 +1,101 @@
+<form class="w-[500px] p-10 mx-auto my-20" id="user-registration-form">
+  <div class="flex flex-col mb-2">
+    <label> Name</label>
+    <input
+      data-name=""
+      name="name"
+      type="text"
+      class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+      placeholder="Enter Name"
+      minlength="2"
+      maxlength="25"
+      required
+    />
+    <span class="error-message" data-name="name"></span>
+  </div>
+  <div class="flex flex-col mb-2">
+    <label>Email</label>
+    <input
+      data-email=""
+      name="email"
+      type="email"
+      class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+      placeholder="Enter Email"
+      maxlength="50"
+      required
+    />
+    <span class="error-message" data-name="email"></span>
+  </div>
+  <div class="flex flex-col mb-2">
+    <label>Username</label>
+    <input
+      data-username=""
+      name="username"
+      type="text"
+      class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+      placeholder="Enter Username"
+      required
+    />
+    <span class="error-message" data-name="username"></span>
+  </div>
+  <div class="flex flex-col mb-2">
+    <label>Date Of Birth</label>
+    <input
+      data-dob=""
+      name="dob"
+      type="date"
+      class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+      required
+    />
+    <span class="error-messgae" data-name="dob"></span>
+  </div>
+
+  <div class="flex flex-col mb-2">
+    <label>City Of Residence</label>
+    <input
+      data-cityOfResidence=""
+      name="cityOfResidence"
+      type="text"
+      class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+      placeholder="Enter City Of Residence"
+    />
+    <span class="error-message" data-name="cityOfResidence"></span>
+  </div>
+
+  <div class="flex flex-col mb-2">
+    <label>Password</label>
+    <input
+      data-password=""
+      name="password"
+      type="password"
+      class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+      placeholder="Enter Password"
+      required
+    />
+    <span class="error-message" data-name="password"></span>
+  </div>
+  <div class="flex flex-col mb-2">
+    <label>Phone</label>
+    <input
+      data-phoneNumber=""
+      name="phoneNumber"
+      type="tel"
+      class="border border-[#D0D0D0] px-5 h-[50px] rounded-[5px] mt-1"
+      placeholder="Enter Phone Bumber"
+    />
+    <span class="error-message" data-name="phone"></span>
+  </div>
+  <button
+    class="bg-blue-500 p-3 text-white rounded-sm"
+    id="submit"
+    type="submit"
+  >
+    Create Account
+  </button>
+  <div class="flex flex-col my-10">
+    <a class="navigation nav" href="/register/merchant"
+      >Create merchant account</a
+    >
+    <a href="/login" class="navigation nav"> Login</a>
+  </div>
+</form>

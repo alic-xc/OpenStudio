@@ -1,0 +1,48 @@
+<div>
+  <header
+    class="fixed w-[100%] flex justify-between place-items-center rounded-md shadow-sm -z-0 px-10 py-3 bg-white"
+  >
+    <div class=""></div>
+
+    <div class="hidden lg:flex w-64 justify-between place-items-center">
+      <div>
+        <h1 class="font-lighter">Hello!</h1>
+        <h1 class="font-bold"></h1>
+      </div>
+    </div>
+    <div class="lg:hidden cursor-pointer"></div>
+  </header>
+  <div
+    class="top-[80px] z-50 left-0 fixed h-full w-[250px] overflow-scroll border-r overflow-x-hidden bottom-0 hidden lg:block pl-10 pt-10"
+  >
+    <nav class="flex flex-col place-content-between flex-1 h-[90%]">
+      <div class="merchant-link" id="merchant-nav" style="display: none">
+        <a href="/merchant/dashboard" class="navigation link">
+          <span class="ml-3">Dashboard</span>
+        </a>
+        <a href="/merchant/sessions" class="navigation link">
+          <span class="ml-3"> My Sessions</span>
+        </a>
+        <button
+          class="logout mb-2 text-[#000] w-full text-[14px] font-semibold hover:bg-[#F3F5F8] hover:text-[#0B73EE] flex p-2 transition-colors duration-700 hover:transition-all rounded-sm"
+        >
+          <span class="ml-3">Logout</span>
+        </button>
+      </div>
+      <div class="user-link" id="user-nav" style="display: none">
+        <a href="/" class="navigation link">
+          <span class="ml-3">Dashboard</span>
+        </a>
+
+        <button
+          class="logout mb-2 text-[#000] w-full text-[14px] font-semibold hover:bg-[#F3F5F8] hover:text-[#0B73EE] flex p-2 transition-colors duration-700 hover:transition-all rounded-sm"
+        >
+          <span class="ml-3">Logout</span>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <div class="lg:ml-[250px] min-h-[100vh] pt-[80px]">
+    <div class="grid grid-cols-12 w-[100] p-3" id="content"></div>
+  </div>
+</div>

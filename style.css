@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .error-message {
+    @apply text-[red];
+  }
+  .nav {
+    @apply underline cursor-pointer text-sm;
+  }
+  .link {
+    @apply block cursor-pointer  mb-2 text-[#000] text-[14px] font-semibold hover:bg-[#F3F5F8] hover:text-[#0B73EE] p-2 transition-colors duration-700 hover:transition-all rounded-sm;
+  }
+
+  .btn {
+    @apply cursor-pointer bg-[#0273FF]  text-white text-sm p-2 px-4 rounded-sm;
+  }
+}
